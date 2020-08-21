@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Card from './Card.js'
 import 'tachyons'
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Hello World</h1>
+    <Card/>
   </React.StrictMode>,
   document.getElementById('root')
 );
