@@ -1,10 +1,9 @@
 import React from 'react';
-import Scroll from './Scroll'
-import CardList from './CardList';
-import SearchBox from './SearchBox';
+import Scroll from '../components/Scroll'
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
 import './App.css'
 //STATE is an object that describe the application
-
 
 class App extends React.Component {
   constructor() {
@@ -30,10 +29,11 @@ class App extends React.Component {
   }
 
   render() {
-    const filteredRobots = this.state.robots.filter(robots => {
-      return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+    const { robots, searchfield} = this.state;
+    const filteredRobots = robots.filter(robot => {
+      return robot.name.toLowerCase().includes(searchfield.toLowerCase())
     })
-    if (this.state.robots.length === 0) {
+    if (robots.length === 0) {
       return <h1 className='tc'>Loading ....</h1>
     }
     return (
